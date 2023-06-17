@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/objects/GameTileRenderer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/objects/GameBoard.cs" type="Script" id=2]
+[ext_resource path="res://assets/objects/FloodFlash.tscn" type="PackedScene" id=3]
+
+[node name="GameBoard" type="Node2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+FloodFlashScene = ExtResource( 3 )
+
+[node name="BoardRenderer" parent="." instance=ExtResource( 1 )]
+TilesTexture = null
+
+[node name="PiecePreviewRenderer" parent="." instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.498039 )
+TilesTexture = null
+
+[node name="FloodFlashes" type="Node2D" parent="."]
