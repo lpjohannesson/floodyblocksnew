@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="floodyblocksnew"
-run/main_scene="res://assets/objects/Game.tscn"
+config/name="floodyblox"
+run/main_scene="res://assets/objects/GameManager.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -30,7 +30,7 @@ common/drop_mouse_on_gui_input_disabled=true
 
 [mono]
 
-project/assembly_name="cstest"
+project/assembly_name="floodyblox"
 
 [physics]
 
