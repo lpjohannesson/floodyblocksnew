@@ -10,7 +10,7 @@ public partial class Game : Node2D
     public Node2D Pieces;
     public GamePiece CurrentPiece;
 
-    public CenterContainer ScoreLabelContainer;
+    public Node2D ScoreLabelContainer;
     public Label ScoreLabel;
 
     public Tween SelectTween;
@@ -225,7 +225,7 @@ public partial class Game : Node2D
 
 	public void PositionScoreLabel()
 	{
-		ScoreLabelContainer.RectGlobalPosition = new Vector2(0, Board.ToGlobal(Board.GetScreenPos()).y - ScoreLabelMargin);
+		ScoreLabelContainer.GlobalPosition = new Vector2(0, Board.ToGlobal(Board.GetScreenPos()).y - ScoreLabelMargin);
 	}
 
 	public void StartGame()
@@ -262,8 +262,8 @@ public partial class Game : Node2D
 
         Pieces = GetNode<Node2D>("Pieces");
 
-        ScoreLabelContainer = GetNode<CenterContainer>("ScoreLabelContainer");
-        ScoreLabel = ScoreLabelContainer.GetNode<Label>("ScoreLabel");
+        ScoreLabelContainer = GetNode<Node2D>("ScoreLabelContainer");
+        ScoreLabel = ScoreLabelContainer.GetNode<Label>("Viewport/CenterContainer/ScoreLabel");
 
         SelectTween = GetNode<Tween>("SelectTween");
 

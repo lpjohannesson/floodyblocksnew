@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/objects/game/GameBoard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/objects/game/Game.cs" type="Script" id=2]
@@ -11,9 +11,11 @@
 [ext_resource path="res://assets/sounds/pick_up.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/sounds/put_down.wav" type="AudioStream" id=10]
 
+[sub_resource type="ViewportTexture" id=7]
+viewport_path = NodePath("ScoreLabelContainer/Viewport")
+
 [sub_resource type="DynamicFont" id=1]
 size = 13
-outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
@@ -83,7 +85,6 @@ tracks/1/keys = {
 }
 
 [node name="Game" type="Node2D"]
-modulate = Color( 1, 1, 1, 0 )
 script = ExtResource( 2 )
 PieceScene = ExtResource( 3 )
 
@@ -94,17 +95,31 @@ PieceScene = ExtResource( 3 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="ScoreLabelContainer" type="CenterContainer" parent="."]
-rect_scale = Vector2( 2, 2 )
+[node name="ScoreLabelContainer" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = SubResource( 7 )
+
+[node name="Viewport" type="Viewport" parent="ScoreLabelContainer"]
+size = Vector2( 90, 32 )
+own_world = true
+transparent_bg = true
+handle_input_locally = false
+render_target_v_flip = true
+render_target_update_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="ScoreLabelContainer/Viewport"]
 use_top_left = true
 
-[node name="ScoreLabel" type="Label" parent="ScoreLabelContainer"]
+[node name="ScoreLabel" type="Label" parent="ScoreLabelContainer/Viewport/CenterContainer"]
 margin_left = -8.0
 margin_top = -7.0
 margin_right = 8.0
 margin_bottom = 7.0
 custom_fonts/font = SubResource( 1 )
 text = "100"
+
+[node name="Camera2D" type="Camera2D" parent="ScoreLabelContainer/Viewport"]
+current = true
 
 [node name="SelectTween" type="Tween" parent="."]
 
