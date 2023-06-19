@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/title.png-81e99d3c910542a81dea8430ca7caf86.stex"
+path="res://.import/recover.png-52369b78a03ca37d6b215d02420738cc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/title.png"
-dest_files=[ "res://.import/title.png-81e99d3c910542a81dea8430ca7caf86.stex" ]
+source_file="res://assets/textures/lose/recover.png"
+dest_files=[ "res://.import/recover.png-52369b78a03ca37d6b215d02420738cc.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

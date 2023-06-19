@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/objects/game/GameBoard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/objects/game/Game.cs" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/sounds/flood_end.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/sounds/pick_up.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/sounds/put_down.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/textures/lose/recover.png" type="Texture" id=11]
 
 [sub_resource type="ViewportTexture" id=7]
 viewport_path = NodePath("ScoreLabelContainer/Viewport")
@@ -147,3 +148,7 @@ stream = SubResource( 4 )
 autoplay = "init"
 anims/init = SubResource( 6 )
 anims/start_game = SubResource( 5 )
+
+[node name="Recover" type="Sprite" parent="."]
+position = Vector2( -34, 10 )
+texture = ExtResource( 11 )
