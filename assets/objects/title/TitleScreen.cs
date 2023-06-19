@@ -6,7 +6,7 @@ public partial class TitleScreen : Node2D
     public AnimationPlayer AnimationPlayer;
     public Timer StartGameTimer;
 
-    public bool Active = false, ReadyForInput = false;
+    public bool Active = false;
 
     [Signal]
     public delegate void GameStarted();
@@ -14,11 +14,6 @@ public partial class TitleScreen : Node2D
     public void PlayButtonClicked()
     {
         if (!Active)
-        {
-            return;
-        }
-
-        if (!ReadyForInput)
         {
             return;
         }
@@ -31,8 +26,7 @@ public partial class TitleScreen : Node2D
 
     public void StartScreen()
     {
-        Active = true;
-        ReadyForInput = false;
+        Active = false;
 
         AnimationPlayer.Play("start_screen");
     }
@@ -46,7 +40,7 @@ public partial class TitleScreen : Node2D
     {
         if (animName == "start_screen")
         {
-            ReadyForInput = true;
+            Active = true;
         }
     }
 

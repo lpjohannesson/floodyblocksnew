@@ -40,7 +40,7 @@ public partial class Game : Node2D
 
     public bool ReadyForInput()
 	{
-		return Board.FloodQueue.Count == 0;
+		return Active && Board.FloodQueue.Count == 0;
 	}
 
 	public void AddScore(int amount)
@@ -110,11 +110,6 @@ public partial class Game : Node2D
 
 	public void SelectPiece(GamePiece piece)
 	{
-		if (!Active)
-		{
-			return;
-		}
-
 		if (!ReadyForInput())
 		{
 			return;
