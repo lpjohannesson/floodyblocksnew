@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/textures/box.png" type="Texture" id=1]
+
+[node name="UIRect" type="NinePatchRect"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
