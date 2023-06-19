@@ -108,7 +108,7 @@ public partial class GameBoard : Node2D
 		FloodFlashes.AddChild(floodFlash);
 
 		floodFlash.GlobalPosition = TileToWorld(tilePos);
-		floodFlash.StartFlash(GetTileId(tilePos));
+		floodFlash.StartFlash(FloodTileId);
 	}
 
 	public static void EnqueueFloodNeighbors(Queue<Vector2I> queue, Vector2I tilePos)
